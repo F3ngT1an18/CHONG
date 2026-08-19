@@ -465,6 +465,9 @@ span{
 .admin-page{
     min-height: 100vh;
     padding: 12rem 9% 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 }
 
 .admin-panel{
