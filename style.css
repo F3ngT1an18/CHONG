@@ -88,6 +88,45 @@ nav a.active{
     border-bottom: 3px solid red;
 }
 
+.music-toggle{
+    position: fixed;
+    right: 2.5rem;
+    bottom: 2.5rem;
+    z-index: 101;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.2rem;
+    height: 4.2rem;
+    border: 0.2rem solid red;
+    border-radius: 50%;
+    background: #161616;
+    color: red;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.music-toggle:hover,
+.music-toggle:focus-visible{
+    background: red;
+    color: black;
+    box-shadow: 0 0 2.5rem red;
+    transform: scale(1.08);
+}
+
+.music-toggle.is-muted{
+    color: #aaaaaa;
+    border-color: #aaaaaa;
+}
+
+@media(max-width: 600px){
+    .music-toggle{
+        right: 1.5rem;
+        bottom: 1.5rem;
+    }
+}
+
 @media(max-width){
     nav{
         position: absolute;
@@ -387,6 +426,25 @@ span{
     transition: 0.3s ease;
 }
 
+.money-offers{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+}
+
+#purchase-money,
+#purchase-forza-money{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+    position: relative;
+    padding: 2.5rem;
+}
+
 .offer-card:hover{
     transform: translateY(-0.8rem);
     box-shadow: 0 0 2.5rem #8e44ad;
@@ -431,6 +489,55 @@ span{
     font-size: 1.7rem;
 }
 
+.money-packages{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem 2rem;
+    margin: 1.5rem 0 1.5rem;
+}
+
+.money-packages li{
+    display: grid;
+    grid-template-columns: 2rem 1fr auto;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.money-packages li i{
+    margin-right: 0;
+}
+
+.money-packages li strong{
+    color: #31d158;
+    font-size: 1.7rem;
+}
+
+.package-section-title{
+    margin-top: 1.5rem;
+    color: #d8b4fe;
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+.spin-packages{
+    margin-top: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.offer-bonuses{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem 1.5rem;
+    margin-top: 0;
+}
+
+#purchase-money .offer-button,
+#purchase-forza-money .offer-button{
+    position: absolute;
+    top: 3.5rem;
+    right: 2.5rem;
+    margin-top: 0;
+}
+
 .offer-features i{
     margin-right: 1rem;
     color: #31d158;
@@ -444,6 +551,29 @@ span{
 @media(max-width: 600px){
     .offer-grid{
         grid-template-columns: 1fr;
+    }
+
+    #purchase-money,
+    #purchase-forza-money{
+        aspect-ratio: auto;
+        padding: 2.5rem 2rem;
+        overflow: visible;
+    }
+
+    .money-offers{
+        grid-template-columns: 1fr;
+    }
+
+    #purchase-money .money-packages,
+    #purchase-money .offer-bonuses,
+    #purchase-forza-money .money-packages{
+        grid-template-columns: 1fr;
+    }
+
+    #purchase-money .offer-button,
+    #purchase-forza-money .offer-button{
+        position: static;
+        margin-top: auto;
     }
 
     .offer-card{
